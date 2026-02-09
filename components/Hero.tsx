@@ -109,7 +109,7 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full h-[calc(100vh-64px)] bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-2">
+        <section className="relative w-full h-screen bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-2">
 
             {/* Header */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
@@ -179,7 +179,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-105 -translate-y-4"
+                                        className="scale-100 -translate-y-4"
                                     />
                                 )}
                             </div>
@@ -189,7 +189,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Single Row Layout */}
-            <div className="w-full max-w-[1100px] flex flex-col xl:flex-row items-center justify-between mb-24">
+            <div className="w-full max-w-[1400px] flex flex-col xl:flex-row items-center justify-between mb-24">
 
                 {/* Left: Rating & Name */}
                 <div className="flex flex-col items-center xl:items-start gap-1 min-w-[200px]">
