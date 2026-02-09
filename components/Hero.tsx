@@ -173,7 +173,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-110 -translate-y-12 translate-x-15"
+                                        className="scale-100 -translate-y-12 translate-x-15"
                                     />
                                 )}
                                 {model.id === "gym-pro" && (
