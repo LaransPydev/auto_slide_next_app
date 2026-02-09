@@ -109,7 +109,7 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full h-[calc(100vh-64px)] bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-4">
+        <section className="relative w-full h-[calc(100vh-64px)] bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-2">
 
             {/* Header */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
@@ -117,7 +117,7 @@ export function Hero() {
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex items-center  bg-[#d5dbe9]/40 backdrop-blur-md rounded-full mb-4 border border-white/20">
+            <div className="flex items-center  bg-[#d5dbe9]/40 backdrop-blur-md rounded-full mb-2 border border-white/20">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -151,7 +151,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden mt-10">
+                <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -167,7 +167,7 @@ export function Hero() {
                                 {model.id === "row" && (
                                     <VideoPlayer
                                         src="/videos/row.webm"
-                                        className="scale-125 -translate-y-50"
+                                        className="scale-125 -translate-y-20 md:-translate-y-32 xl:-translate-y-50"
                                     />
                                 )}
                                 {model.id === "bike" && (
@@ -189,7 +189,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Single Row Layout */}
-            <div className="w-full max-w-[1100px] flex flex-col xl:flex-row items-center justify-between mb-10">
+            <div className="w-full max-w-[1100px] flex flex-col xl:flex-row items-center justify-between mb-24">
 
                 {/* Left: Rating & Name */}
                 <div className="flex flex-col items-center xl:items-start gap-1 min-w-[200px]">
