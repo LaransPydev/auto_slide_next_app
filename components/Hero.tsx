@@ -109,15 +109,15 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full min-h-[calc(100vh-64px)] bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-8 pb-2">
+        <section className="relative w-full h-[calc(100vh-64px)] bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-4">
 
             {/* Header */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
                 Discover Our Treadmills Specific Model
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex items-center gap-1 bg-[#d5dbe9]/40 backdrop-blur-md p-1.5 rounded-full mb-8 lg:mb-12 border border-white/20">
+            <div className="flex items-center  bg-[#d5dbe9]/40 backdrop-blur-md rounded-full mb-4 border border-white/20">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -132,7 +132,7 @@ export function Hero() {
                 ))}
             </div>
             {/* Main Content Area */}
-            <div className="flex-1 w-full max-w-7xl px-4 relative flex items-center justify-center">
+            <div className="flex-1 w-full max-w-7xl px-2 relative flex items-center justify-center">
 
                 {/* Navigation Arrows */}
                 <button
@@ -151,7 +151,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative w-full h-[500px] md:h-[750px] overflow-hidden">
+                <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden mt-10">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -173,7 +173,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-100 -translate-y-12 translate-x-15"
+                                        className="scale-110 -translate-y-12 translate-x-15"
                                     />
                                 )}
                                 {model.id === "gym-pro" && (
@@ -189,7 +189,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Single Row Layout */}
-            <div className="w-full max-w-[1200px] px-4 mt-auto flex flex-col xl:flex-row items-center justify-between gap-8 pb-8">
+            <div className="w-full max-w-[1100px] flex flex-col xl:flex-row items-center justify-between mb-10">
 
                 {/* Left: Rating & Name */}
                 <div className="flex flex-col items-center xl:items-start gap-1 min-w-[200px]">
@@ -207,8 +207,8 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar */}
-                <div className="flex-1 h-100px w-full xl:w-auto overflow-x-auto no-scrollbar flex justify-center">
-                    <div className="flex items-center justify-center px-10 py-5 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
+                <div className="flex-1 h-[100px] w-full xl:w-auto overflow-x-auto no-scrollbar flex justify-center">
+                    <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
 
                         {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
@@ -346,7 +346,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
+                                <div className="flex items-center justify-center min-w-[120px] pb-4 border-r border-gray-300/60 pr-8">
                                     <div className="flex flex-col items-center">
                                         <div className="relative border-2 border-gray-900 rounded-md px-2 py-0.5">
                                             {/* Bracket Cuts */}
