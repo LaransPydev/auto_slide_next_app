@@ -179,7 +179,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-100 -translate-y-4"
+                                        className="scale-105 -translate-y-4"
                                     />
                                 )}
                             </div>
