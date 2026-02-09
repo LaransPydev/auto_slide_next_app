@@ -109,7 +109,7 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full h-screen bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-2">
+        <section className="relative w-full h-[95vh] bg-[#E0E7FF] overflow-hidden flex flex-col items-center">
 
             {/* Header */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
