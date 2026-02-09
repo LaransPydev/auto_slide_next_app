@@ -70,10 +70,11 @@ function VideoPlayer({ src, onEnded, className = "" }: VideoPlayerProps) {
         <video
             ref={videoRef}
             src={src}
-            className={`w-full h-full object-contain drop-shadow-2xl animate-in fade-in zoom-in-95 duration-500 ${className}`}
+            className={`w-full h-full object-contain drop-shadow-2xl ${className}`}
             autoPlay
             muted
             playsInline
+            loop
             onEnded={onEnded}
         />
     );
@@ -150,38 +151,40 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative w-full h-[500px] md:h-[750px] flex items-center justify-center">
-                    {/* sTread Pro (Animation) */}
-                    {activeModel === "pro" && (
-                        <VideoPlayer
-                            src="/videos/pro.webm"
-                            className="scale-125 -translate-y-6"
-                        />
-                    )}
-
-                    {/* sBike (Animation) */}
-                    {activeModel === "bike" && (
-                        <VideoPlayer
-                            src="/videos/bike.webm"
-                            className="scale-110 -translate-y-12 translate-x-15"
-                        />
-                    )}
-
-                    {/* sRow (Animation) */}
-                    {activeModel === "row" && (
-                        <VideoPlayer
-                            src="/videos/row.webm"
-                            className="scale-125 -translate-y-50 "
-                        />
-                    )}
-
-                    {/* sGym Pro (Animation) */}
-                    {activeModel === "gym-pro" && (
-                        <VideoPlayer
-                            src="/videos/gym-pro.webm"
-                            className="scale-115 -translate-y-4"
-                        />
-                    )}
+                <div className="relative w-full h-[500px] md:h-[750px] overflow-hidden">
+                    <div
+                        className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
+                        style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
+                    >
+                        {MODELS.map((model) => (
+                            <div key={model.id} className="w-full h-full flex-shrink-0 flex items-center justify-center">
+                                {model.id === "pro" && (
+                                    <VideoPlayer
+                                        src="/videos/pro.webm"
+                                        className="scale-125 -translate-y-6"
+                                    />
+                                )}
+                                {model.id === "row" && (
+                                    <VideoPlayer
+                                        src="/videos/row.webm"
+                                        className="scale-125 -translate-y-50"
+                                    />
+                                )}
+                                {model.id === "bike" && (
+                                    <VideoPlayer
+                                        src="/videos/bike.webm"
+                                        className="scale-110 -translate-y-12 translate-x-15"
+                                    />
+                                )}
+                                {model.id === "gym-pro" && (
+                                    <VideoPlayer
+                                        src="/videos/gym-pro.webm"
+                                        className="scale-110 -translate-y-4"
+                                    />
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
