@@ -112,7 +112,7 @@ export function Hero() {
         <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3">
 
             {/* Header */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
                 Discover Our Treadmills Specific Model
             </h1>
 
@@ -135,19 +135,21 @@ export function Hero() {
             <div className="flex-1 w-full relative flex items-center justify-center">
 
                 {/* Navigation Arrows */}
-                <button
-                    onClick={handlePrev}
-                    className="absolute left-4 lg:left-0 text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block z-10"
-                >
-                    <ChevronLeft size={32} />
-                </button>
+                <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
+                    <button
+                        onClick={handlePrev}
+                        className="pointer-events-auto text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block"
+                    >
+                        <ChevronLeft size={32} />
+                    </button>
 
-                <button
-                    onClick={handleNext}
-                    className="absolute right-4 lg:right-0 text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block z-10"
-                >
-                    <ChevronRight size={32} />
-                </button>
+                    <button
+                        onClick={handleNext}
+                        className="pointer-events-auto text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block"
+                    >
+                        <ChevronRight size={32} />
+                    </button>
+                </div>
 
 
                 {/* Product Image */}
