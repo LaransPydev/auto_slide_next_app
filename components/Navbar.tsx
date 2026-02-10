@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Navbar() {
     return (
-        <nav className="flex items-center justify-between px-6 py-2 bg-white shadow-sm font-sans">
+        <nav className="flex items-center justify-between h-[8vh] bg-white shadow-sm font-sans">
             <div className="flex items-center">
                 <Image
                     src="/logo.png"
@@ -18,7 +18,7 @@ export function Navbar() {
                 />
             </div>
             {/* Navigation Links */}
-            <div className="hidden 2xl:flex items-center gap-6 text-xs font-bold text-gray-700 uppercase tracking-wide">
+            <div className="hidden lg:flex items-center gap-4 text-xs font-bold text-gray-700 uppercase tracking-wide">
                 <a href="#" className="hover:text-red-600 transition-colors">Treadmills</a>
                 <a href="#" className="hover:text-red-600 transition-colors">Bikes & Exercise Bikes</a>
                 <a href="#" className="hover:text-red-600 transition-colors">Rowing machines</a>

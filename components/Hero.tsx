@@ -70,7 +70,7 @@ function VideoPlayer({ src, onEnded, className = "" }: VideoPlayerProps) {
         <video
             ref={videoRef}
             src={src}
-            className={`w-[100%] h-[350px] md:h-[500px] object-contain drop-shadow-2xl ${className}`}
+            className={`w-full h-full object-contain drop-shadow-2xl ${className}`}
             autoPlay
             muted
             playsInline
@@ -109,7 +109,7 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full h-[95vh] bg-[#E0E7FF] overflow-hidden flex flex-col items-center">
+        <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-4">
 
             {/* Header */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
@@ -151,7 +151,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative w-full h-[350px] md:h-[500px] overflow-hidden">
+                <div className="relative h-[60vh] w-full overflow-hidden">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -188,11 +188,12 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* Bottom Info Bar - Single Row Layout */}
-            <div className="w-full max-w-[1400px] flex flex-col xl:flex-row items-center  mb-120">
+            {/* Bottom Info Bar - Absolute Overlay */}
+            <div className="absolute bottom-6 w-full max-w-[1400px] flex flex-col lg:flex-row items-center justify-between px-8 z-20 gap-4 pointer-events-none">
+
 
                 {/* Left: Rating & Name */}
-                <div className="flex flex-col items-center xl:items-start min-w-[200px]">
+                <div className="flex flex-col items-center xl:items-start min-w-[200px] pointer-events-auto">
                     <div className="flex items-center text-yellow-400">
                         <div className="flex gap-0.5">
                             <Star size={16} fill="currentColor" />
@@ -207,7 +208,7 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar */}
-                <div className="flex-1 h-[95px] w-full xl:w-auto overflow-x-auto no-scrollbar flex justify-center">
+                <div className="flex-1 h-[95px] w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center pointer-events-auto">
                     <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
 
                         {activeModel === "gym-pro" ? (
@@ -404,7 +405,7 @@ export function Hero() {
                 </div>
 
                 {/* Right: CTA */}
-                <div className="flex justify-end min-w-[200px]">
+                <div className="flex justify-end min-w-[200px] pointer-events-auto">
                     <button className="group flex items-center gap-3 bg-[#1A1A1A] hover:bg-black text-white pl-8 pr-6 py-3.5 rounded-full font-bold text-sm transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
                         Discover more
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
