@@ -112,7 +112,7 @@ export function Hero() {
         <section className="relative w-full h-[95vh] bg-[#E0E7FF] overflow-hidden flex flex-col items-center">
 
             {/* Header */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
                 Discover Our Treadmills Specific Model
             </h1>
 
@@ -132,7 +132,7 @@ export function Hero() {
                 ))}
             </div>
             {/* Main Content Area */}
-            <div className="flex-1 w-full max-w-7xl px-2 relative flex items-center justify-center">
+            <div className="flex-1 w-full relative flex items-center justify-center">
 
                 {/* Navigation Arrows */}
                 <button
@@ -151,7 +151,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
+                <div className="relative w-full h-[350px] md:h-[500px] overflow-hidden">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -189,11 +189,11 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Single Row Layout */}
-            <div className="w-full max-w-[1400px] flex flex-col xl:flex-row items-center justify-between mb-24">
+            <div className="w-full max-w-[1400px] flex flex-col xl:flex-row items-center  mb-120">
 
                 {/* Left: Rating & Name */}
-                <div className="flex flex-col items-center xl:items-start gap-1 min-w-[200px]">
-                    <div className="flex items-center gap-1.5 text-yellow-400">
+                <div className="flex flex-col items-center xl:items-start min-w-[200px]">
+                    <div className="flex items-center text-yellow-400">
                         <div className="flex gap-0.5">
                             <Star size={16} fill="currentColor" />
                             <Star size={16} fill="currentColor" />
@@ -201,13 +201,13 @@ export function Hero() {
                             <Star size={16} fill="currentColor" />
                             <Star size={16} fill="currentColor" className="text-gray-400/50" />
                         </div>
-                        <span className="text-gray-900 font-bold text-sm mt-0.5">610</span>
+                        <span className="text-gray-900 font-bold text-sm mt-0.5">670</span>
                     </div>
                     <h2 className="text-3xl font-black text-gray-900 tracking-tight">{MODELS.find(m => m.id === activeModel)?.label}</h2>
                 </div>
 
                 {/* Center: Specs Bar */}
-                <div className="flex-1 h-[100px] w-full xl:w-auto overflow-x-auto no-scrollbar flex justify-center">
+                <div className="flex-1 h-[95px] w-full xl:w-auto overflow-x-auto no-scrollbar flex justify-center">
                     <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
 
                         {activeModel === "gym-pro" ? (
