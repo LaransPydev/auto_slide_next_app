@@ -151,7 +151,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative h-[60vh] w-full overflow-hidden">
+                <div className="relative h-[60vh] w-full min-h-0 overflow-hidden">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -173,7 +173,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-100 -translate-y-8 translate-x-15"
+                                        className="scale-125 -translate-y-4 md:scale-100 md:-translate-y-8"
                                     />
                                 )}
                                 {model.id === "gym-pro" && (
@@ -188,12 +188,12 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* Bottom Info Bar - Absolute Overlay */}
-            <div className="absolute bottom-6 w-full max-w-[1400px] flex flex-col lg:flex-row items-center justify-between px-8 z-20 gap-4 pointer-events-none">
+            {/* Bottom Info Bar - Flex Flow at Bottom */}
+            <div className="w-full max-w-[1400px] flex flex-col lg:flex-row items-center justify-between px-8 z-20 gap-4 mb-6 mt-auto">
 
 
                 {/* Left: Rating & Name */}
-                <div className="flex flex-col items-center xl:items-start min-w-[200px] pointer-events-auto">
+                <div className="flex flex-col items-center xl:items-start min-w-[200px]">
                     <div className="flex items-center text-yellow-400">
                         <div className="flex gap-0.5">
                             <Star size={16} fill="currentColor" />
@@ -208,7 +208,7 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar */}
-                <div className="flex-1 h-[95px] w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center pointer-events-auto">
+                <div className="flex-1 h-[95px] w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center">
                     <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
 
                         {activeModel === "gym-pro" ? (
@@ -405,7 +405,7 @@ export function Hero() {
                 </div>
 
                 {/* Right: CTA */}
-                <div className="flex justify-end min-w-[200px] pointer-events-auto">
+                <div className="flex justify-end min-w-[200px]">
                     <button className="group flex items-center gap-3 bg-[#1A1A1A] hover:bg-black text-white pl-8 pr-6 py-3.5 rounded-full font-bold text-sm transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
                         Discover more
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
