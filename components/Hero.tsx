@@ -70,7 +70,7 @@ function VideoPlayer({ src, onEnded, className = "" }: VideoPlayerProps) {
         <video
             ref={videoRef}
             src={src}
-            className={`w-full h-full object-contain drop-shadow-2xl ${className}`}
+            className={`w-[100%] h-[350px] md:h-[500px] object-contain drop-shadow-2xl ${className}`}
             autoPlay
             muted
             playsInline
