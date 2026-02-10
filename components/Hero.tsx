@@ -109,7 +109,7 @@ export function Hero() {
     }, [activeModel, handleNext]);
 
     return (
-        <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-4">
+        <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3">
 
             {/* Header */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
@@ -117,7 +117,7 @@ export function Hero() {
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex items-center  bg-[#d5dbe9]/40 backdrop-blur-md rounded-full mb-2 border border-white/20">
+            <div className="flex items-center h-[6vh] bg-[#d5dbe9]/40 backdrop-blur-md rounded-full border border-white/20">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -173,13 +173,13 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-100 -translate-y-12 translate-x-15"
+                                        className="scale-100 -translate-y-8 translate-x-15"
                                     />
                                 )}
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-100 -translate-y-4"
+                                        className="scale-100 -translate-y-8"
                                     />
                                 )}
                             </div>

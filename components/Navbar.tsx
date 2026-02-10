@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Navbar() {
     return (
-        <nav className="flex items-center justify-between h-[8vh] bg-white shadow-sm font-sans">
+        <nav className="flex items-center justify-between h-[8vh] px-5 bg-white shadow-sm font-sans">
             <div className="flex items-center">
                 <Image
                     src="/logo.png"
