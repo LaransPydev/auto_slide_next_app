@@ -100,13 +100,13 @@ export function Hero() {
     }, []);
 
     // Auto-slider logic
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         handleNext();
-    //     }, 5000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 5000);
 
-    //     return () => clearInterval(interval);
-    // }, [activeModel, handleNext]);
+        return () => clearInterval(interval);
+    }, [activeModel, handleNext]);
 
     return (
         <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3">
