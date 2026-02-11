@@ -352,7 +352,7 @@ export function Hero() {
                             </div>
                         ) : (
                             // Default Treadmill Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
+                            <div className="flex items-center h-[75px] justify-between gap-4 md:gap-8 min-w-max px-4">
                                 {/* Speed Spec */}
                                 <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-6">
                                     <div className="flex flex-col items-start gap-[2px]">
