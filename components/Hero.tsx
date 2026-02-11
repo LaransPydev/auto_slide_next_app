@@ -163,25 +163,25 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-125 -translate-y-6"
+                                        className="scale-125 -translate-y-4"
                                     />
                                 )}
                                 {model.id === "row" && (
                                     <VideoPlayer
                                         src="/videos/row.webm"
-                                        className="scale-125 -translate-y-20 md:-translate-y-32 xl:-translate-y-50"
+                                        className="scale-140 -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
                                     />
                                 )}
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-125 -translate-y-4 md:scale-100 md:-translate-y-8"
+                                        className="scale-125 -translate-y-4 md:scale-100 md:-translate-y-6"
                                     />
                                 )}
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-100 -translate-y-8"
+                                        className="scale-100 -translate-y-6"
                                     />
                                 )}
                             </div>
@@ -210,7 +210,7 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar */}
-                <div className="flex-1 h-[95px] w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center">
+                <div className="flex-1 w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center">
                     <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
 
                         {activeModel === "gym-pro" ? (
@@ -224,7 +224,7 @@ export function Hero() {
                                             <div className="absolute top-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
                                             <div className="absolute bottom-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
 
-                                            <span className="text-3xl font-black text-gray-900 tracking-tighter leading-none mb-1">21.5"</span>
+                                            <span className="text-3xl font-black text-gray-900 tracking-tighter leading-none">21.5"</span>
                                             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide leading-none">with</span>
                                             <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide leading-none">Sportstech Live</span>
                                         </div>
@@ -256,7 +256,7 @@ export function Hero() {
                                 <div className="flex items-center justify-center min-w-[100px]">
                                     <div className="flex flex-col items-center">
                                         <div className="relative border-2 border-gray-900 rounded-lg px-3 py-2 min-h-[64px] flex flex-col items-center justify-center">
-                                            <div className="absolute top-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
+                                            <div className="absolute top-[2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
                                             <div className="absolute bottom-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
 
                                             <div className="relative mb-1.5">
