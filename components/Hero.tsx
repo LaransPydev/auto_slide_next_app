@@ -100,13 +100,13 @@ export function Hero() {
     }, []);
 
     // Auto-slider logic
-    useEffect(() => {
-        const interval = setInterval(() => {
-            handleNext();
-        }, 5000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         handleNext();
+    //     }, 5000);
 
-        return () => clearInterval(interval);
-    }, [activeModel, handleNext]);
+    //     return () => clearInterval(interval);
+    // }, [activeModel, handleNext]);
 
     return (
         <section className="relative w-full h-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3">
@@ -215,188 +215,226 @@ export function Hero() {
 
                         {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
-                            <div className="flex h-100px items-center gap-8 md:gap-16 min-w-max">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-md px-3 py-2 min-h-[64px] flex flex-col items-center justify-center">
-                                            {/* Bracket Cuts */}
-                                            <div className="absolute top-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
 
-                                            <span className="text-3xl font-black text-gray-900 tracking-tighter leading-none">21.5"</span>
-                                            <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide leading-none">with</span>
-                                            <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide leading-none">Sportstech Live</span>
+                                        <span className="text-3xl font-black text-gray-900 leading-none tracking-tight">21.5"</span>
+                                        <div className="flex flex-col items-center leading-tight mt-1 gap-[1px]">
+                                            <span className="text-[8px] font-bold text-gray-600 uppercase tracking-wide">with</span>
+                                            <span className="text-[9px] font-bold text-gray-900 tracking-tight">Sportstech Live</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Folding Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-lg px-4 py-2 min-h-[64px] flex flex-col items-center justify-between">
-                                            <div className="absolute top-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative border-x-2 border-gray-900 px-4 py-1.5 flex flex-col items-center min-h-[55px] justify-between">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
 
-                                            <div className="flex flex-col items-center leading-none mb-1.5">
-                                                <span className="text-[9px] font-bold text-gray-600">Folding</span>
-                                                <span className="text-[9px] font-bold text-gray-600">Function</span>
-                                            </div>
-                                            {/* Custom Folding Icon */}
-                                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-900">
-                                                <path d="M6 3V21" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                                                <path d="M6 13L16 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                                                <path d="M11 13L18 21" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                                        <div className="flex flex-col items-center leading-none gap-[1px]">
+                                            <span className="text-[12px] font-bold text-gray-600">Folding</span>
+                                            <span className="text-[12px] font-bold text-gray-600">Function</span>
+                                        </div>
+
+                                        {/* Folding Icon */}
+                                        <div className="mb-0.5">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 5V19" stroke="#111827" strokeWidth="3.5" strokeLinecap="round" />
+                                                <path d="M17 19L8 9" stroke="#111827" strokeWidth="3.5" strokeLinecap="round" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* App Spec */}
-                                <div className="flex items-center justify-center min-w-[100px]">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-lg px-3 py-2 min-h-[64px] flex flex-col items-center justify-center">
-                                            <div className="absolute top-[2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[20%] right-[20%] h-[2px] bg-white z-10"></div>
+                                {/* Fitness App Spec */}
+                                <div className="flex items-center justify-center min-w-[110px]">
+                                    <div className="relative border-x-2 border-gray-900 px-4 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
 
-                                            <div className="relative mb-1.5">
-                                                <Smartphone size={22} className="text-gray-900" strokeWidth={1.5} />
-                                                <Activity size={10} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-900 fill-white" />
-                                            </div>
-                                            <div className="flex flex-col items-center leading-none">
-                                                <span className="text-[8px] font-bold text-gray-600">Fitness app</span>
-                                                <span className="text-[8px] font-bold text-gray-600">compatible</span>
-                                            </div>
+                                        {/* App Icon */}
+                                        <div className="mb-1.5">
+                                            <svg width="26" height="14" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="1" width="26" height="14" rx="3" stroke="#111827" strokeWidth="2" />
+                                                <path d="M6 8H9L11 5L14 11L16 8H22" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+
+                                        <div className="flex flex-col items-center leading-none gap-[1px]">
+                                            <span className="text-[12px] font-bold text-gray-600">Fitness app</span>
+                                            <span className="text-[12px] font-bold text-gray-600">compatible</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ) : activeModel === "row" || activeModel === "bike" ? (
                             // sRow & sBike Specs
-                            <div className="flex items-center gap-8 md:gap-16 min-w-max">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
                                 {/* Screen Spec (Row) */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-md px-2 py-0.5">
-                                            {/* Bracket Cuts */}
-                                            <div className="absolute top-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
 
-                                            <span className="text-3xl font-black text-gray-900 tracking-tighter">21.5"</span>
-                                            <div className="absolute -bottom-4 w-full text-center">
-                                                <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide">with</span>
-                                            </div>
+                                        <span className="text-3xl font-black text-gray-900 leading-none tracking-tight">21.5"</span>
+                                        <div className="flex flex-col items-center leading-tight mt-1 gap-[1px]">
+                                            <span className="text-[8px] font-bold text-gray-600 uppercase tracking-wide">with</span>
+                                            <span className="text-[10px] font-bold text-gray-900 tracking-tight">Sportstech Live</span>
                                         </div>
-                                        <span className="text-[9px] font-bold text-gray-600 mt-4">Sportstech Live</span>
                                     </div>
                                 </div>
 
                                 {/* Workout Video Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-lg px-4 py-2">
-                                            <div className="absolute top-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <PlayCircle size={24} className="text-gray-900 fill-gray-900/20" strokeWidth={1.5} />
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative border-x-2 border-gray-900 px-5 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+
+                                        {/* Video Icon */}
+                                        <div className="mb-1">
+                                            <svg width="22" height="18" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="#111827" strokeWidth="2" />
+                                                <path d="M10 7L15 10L10 13V7Z" fill="#111827" />
+                                                {/* <circle cx="19" cy="15" r="3" fill="#111827" stroke="white" strokeWidth="1" /> */}
+                                            </svg>
                                         </div>
-                                        <div className="flex flex-col items-center mt-3 leading-tight">
-                                            <span className="text-[9px] font-bold text-gray-600">Workout</span>
-                                            <span className="text-[9px] font-bold text-gray-600">Video</span>
+
+                                        <div className="flex flex-col items-center leading-none gap-[1px]">
+                                            <span className="text-[12px] font-bold text-gray-600">Workout</span>
+                                            <span className="text-[12px] font-bold text-gray-600">Video</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Fitness App Spec */}
-                                <div className="flex items-center justify-center min-w-[100px]">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-lg px-4 py-2">
-                                            <div className="absolute top-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <div className="relative">
-                                                <Smartphone size={24} className="text-gray-900" strokeWidth={1.5} />
-                                                <Activity size={10} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-900 fill-white" />
-                                            </div>
+                                <div className="flex items-center justify-center min-w-[110px]">
+                                    <div className="relative border-x-2 border-gray-900 px-4 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+
+                                        {/* App Icon */}
+                                        <div className="mb-1.5">
+                                            <svg width="26" height="14" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="1" y="1" width="26" height="14" rx="3" stroke="#111827" strokeWidth="2" />
+                                                <path d="M6 8H9L11 5L14 11L16 8H22" stroke="#111827" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
                                         </div>
-                                        <div className="flex flex-col items-center mt-3 leading-tight">
-                                            <span className="text-[9px] font-bold text-gray-600">Fitness app</span>
-                                            <span className="text-[9px] font-bold text-gray-600">compatible</span>
+
+                                        <div className="flex flex-col items-center leading-none gap-[1px]">
+                                            <span className="text-[11px] font-bold text-gray-600">Fitness app</span>
+                                            <span className="text-[11px] font-bold text-gray-600">compatible</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ) : (
                             // Default Treadmill Specs
-                            <div className="flex items-center justify-between gap-6 md:gap-12 min-w-max">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
                                 {/* Speed Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-start relative px-2">
-                                        {/* Top Line */}
-                                        <div className="w-[120%] h-0.5 bg-gray-900 absolute -top-1 left-0"></div>
+                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-6">
+                                    <div className="flex flex-col items-start gap-[2px]">
+                                        {/* Top Lines */}
+                                        <div className="flex flex-col gap-[3px] w-full items-start pl-2">
+                                            <div className="w-[50px] h-[1.5px] bg-gray-900"></div>
+                                            <div className="w-[70px] h-[1.5px] bg-gray-900 ml-4"></div>
+                                        </div>
 
-                                        <div className="flex items-baseline gap-1 relative z-10">
-                                            <span className="text-4xl font-black text-gray-900 tracking-tighter">20</span>
-                                            <div className="flex flex-col leading-none">
-                                                <span className="text-[10px] font-bold text-gray-600">km/h</span>
-                                                <span className="text-[9px] font-black text-white bg-black px-1 py-[1px] rounded-[1px]">MAX</span>
+                                        <div className="flex items-end gap-1.5 my-0.5">
+                                            <span className="text-4xl font-black text-gray-900 leading-[0.8] tracking-tight">20</span>
+                                            <div className="flex flex-col justify-end leading-none gap-[2px] pb-[1px]">
+                                                <span className="text-[10px] font-bold text-gray-600 leading-none">km/h</span>
+                                                <div className="bg-black text-white px-1.5 py-[1px] rounded-[2px] text-[8px] font-black leading-none tracking-wide">MAX</div>
                                             </div>
                                         </div>
 
-                                        {/* Bottom Line */}
-                                        <div className="w-[120%] h-0.5 bg-gray-900 absolute -bottom-1 right-0"></div>
-                                        {/* Decor lines */}
-                                        <div className="w-[100%] h-[1px] bg-gray-400 absolute -top-2 left-6"></div>
+                                        {/* Bottom Lines */}
+                                        <div className="flex flex-col gap-[3px] w-full items-end pr-2">
+                                            <div className="w-[60px] h-[1.5px] bg-gray-900 mr-2"></div>
+                                            <div className="w-[45px] h-[1.5px] bg-gray-900"></div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[120px] pb-4 border-r border-gray-300/60 pr-8">
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative border-2 border-gray-900 rounded-md px-2 py-0.5">
-                                            {/* Bracket Cuts */}
-                                            <div className="absolute top-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
-                                            <div className="absolute bottom-[-2px] left-[25%] right-[25%] h-[2px] bg-white z-10"></div>
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center">
+                                        {/* Bracket Caps */}
+                                        <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-gray-900"></div>
+                                        <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-gray-900"></div>
 
-                                            <span className="text-3xl font-black text-gray-900 tracking-tighter">21.5"</span>
-                                            <div className="absolute -bottom-4 w-full text-center">
-                                                <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wide">with</span>
-                                            </div>
+                                        <span className="text-3xl font-black text-gray-900 leading-none tracking-tight">21.5"</span>
+                                        <div className="flex flex-col items-center leading-tight mt-1 gap-[1px]">
+                                            <span className="text-[8px] font-bold text-gray-600 uppercase tracking-wide">with</span>
+                                            <span className="text-[9px] font-bold text-gray-900 tracking-tight">Sportstech Live</span>
                                         </div>
-                                        <span className="text-[9px] font-bold text-gray-600 mt-4">Sportstech Live</span>
                                     </div>
                                 </div>
 
                                 {/* Surface Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-8">
-                                    <div className="relative flex flex-col items-center justify-center pt-1">
-                                        <svg width="60" height="35" viewBox="0 0 70 45" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-0.5">
-                                            <path d="M18 5H52L62 40H8L18 5Z" stroke="#111827" strokeWidth="2" strokeLinejoin="round" />
-                                            <path d="M15 12L13 16" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" />
-                                            <path d="M55 12L57 16" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" />
+                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                    <div className="relative w-[90px] h-[60px] flex items-center justify-center">
+                                        <svg width="100%" height="120%" viewBox="0 0 90 55" fill="none" className="absolute inset-0">
+                                            {/* Trapezoid Frame */}
+                                            <path d="M20 5 H70 L85 50 H5 L20 5 Z" stroke="#1f2937" strokeWidth="1.5" strokeLinejoin="round" />
+                                            {/* Inner Detail Lines - Left */}
+                                            <line x1="24" y1="12" x2="21" y2="22" stroke="#4b5563" strokeWidth="1.5" strokeLinecap="round" />
+                                            <line x1="27" y1="12" x2="24" y2="22" stroke="#4b5563" strokeWidth="1.5" strokeLinecap="round" />
+                                            {/* Inner Detail Lines - Right */}
+                                            <line x1="66" y1="12" x2="69" y2="22" stroke="#4b5563" strokeWidth="1.5" strokeLinecap="round" />
+                                            <line x1="63" y1="12" x2="66" y2="22" stroke="#4b5563" strokeWidth="1.5" strokeLinecap="round" />
+                                            {/* Bottom Deck Line */}
+                                            <line x1="15" y1="45" x2="80" y2="45" stroke="#1f2937" strokeWidth="1.5" strokeLinecap="round" />
                                         </svg>
-                                        <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-                                            <span className="text-[9px] font-bold text-gray-800 leading-none">Large</span>
-                                            <span className="text-[9px] font-bold text-gray-800 leading-none my-[1px]">Running</span>
-                                            <span className="text-[9px] font-bold text-gray-800 leading-none">Surface</span>
+                                        <div className="relative z-10 flex flex-col items-center justify-center text-center pt-3">
+                                            <span className="text-[9px] font-bold text-gray-800 leading-[1.1]">Large<br />Running<br />Surface</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Incline Spec */}
-                                <div className="flex items-center justify-center min-w-[100px]">
-                                    <div className="flex items-end gap-1.5">
-                                        <span className="text-4xl font-black text-gray-900 tracking-tighter leading-none">15</span>
-                                        <div className="flex flex-col justify-end pb-0.5 gap-0.5">
-                                            <div className="flex items-end gap-[2px] h-5 mb-0.5">
-                                                <div className="w-[3px] h-[30%] bg-gray-900 rounded-[1px]"></div>
-                                                <div className="w-[3px] h-[45%] bg-gray-900 rounded-[1px]"></div>
-                                                <div className="w-[3px] h-[60%] bg-gray-900 rounded-[1px]"></div>
-                                                <div className="w-[3px] h-[75%] bg-gray-900 rounded-[1px]"></div>
-                                                <div className="w-[3px] h-[90%] bg-gray-900 rounded-[1px]"></div>
-                                                <div className="w-[3px] h-[100%] bg-gray-900 rounded-[1px]"></div>
-                                            </div>
-                                            <div className="flex flex-col leading-none">
-                                                <span className="text-[9px] font-bold text-gray-600">Incline</span>
-                                                <span className="text-[9px] font-bold text-gray-600">Levels</span>
+                                <div className="flex items-center justify-center min-w-[110px]">
+                                    <div className="flex flex-col items-start pl-2">
+                                        {/* Rising Bars */}
+                                        <div className="flex items-end gap-[3px] h-5 mb-1 w-full pl-1">
+                                            <div className="w-[2.5px] h-[25%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[35%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[45%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[55%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[65%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[75%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[85%] bg-black rounded-sm"></div>
+                                            <div className="w-[2.5px] h-[100%] bg-black rounded-sm"></div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-3xl font-black text-gray-900 leading-none">15</span>
+                                            <div className="flex flex-col leading-none gap-[1px]">
+                                                <span className="text-[10px] font-bold text-gray-600">Incline</span>
+                                                <span className="text-[10px] font-bold text-gray-600">Levels</span>
                                             </div>
                                         </div>
                                     </div>
