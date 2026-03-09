@@ -103,7 +103,7 @@ export function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             handleNext();
-        }, 4000);
+        }, 4200);
 
         return () => clearInterval(interval);
     }, [activeModel, handleNext]);
