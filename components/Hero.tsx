@@ -162,19 +162,19 @@ export function Hero() {
                             <div key={model.id} className="w-full h-full flex-shrink-0 flex items-center justify-center">
                                 {model.id === "pro" && (
                                     <VideoPlayer
-                                        src="/videos/pro.webm"
+                                        src="https://s3.us-east-1.amazonaws.com/sportstech.team/videos/sTread_Shadow.webm"
                                         className="scale-125 -translate-y-4"
                                     />
                                 )}
                                 {model.id === "row" && (
                                     <VideoPlayer
-                                        src="/videos/row.webm"
+                                        src="https://s3.us-east-1.amazonaws.com/sportstech.team/videos/sRow_UIUX_Animation.webm"
                                         className="scale-140 -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
                                     />
                                 )}
                                 {model.id === "bike" && (
                                     <VideoPlayer
-                                        src="/videos/bike.webm"
+                                        src="https://s3.us-east-1.amazonaws.com/sportstech.team/videos/sBike_UIUX_Animation.webm"
                                         className="scale-125 -translate-y-4 md:scale-100 md:-translate-y-6"
                                     />
                                 )}
