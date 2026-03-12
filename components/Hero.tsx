@@ -159,7 +159,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/sTread_Return.webm"
-                                        className="scale-130 -translate-y-4"
+                                        className="scale-120 -translate-y-4"
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
