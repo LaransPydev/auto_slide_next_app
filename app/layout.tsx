@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
-import { Public_Sans } from "next/font/google";
 
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  variable: "--font-public-sans",
+const sohne = localFont({
+  src: [
+    {
+      path: "../public/fonts/fonts/sohne-kraftig.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/fonts/sohne-halbfett.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sohne",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${publicSans.variable} font-sans antialiased`}>
+      <body className={`${sohne.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
