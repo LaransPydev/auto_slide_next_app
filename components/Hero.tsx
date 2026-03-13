@@ -105,18 +105,18 @@ export function Hero() {
     // Auto-slider logic replaced by video onEnded callback
 
     return (
-        <section className="relative w-full h-screen bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3 ">
+        <section className="relative w-full bg-[#E0E7FF] overflow-hidden flex flex-col items-center pt-3 h-full">
 
             {/* Header */}
             <h1
-                className="text-3xl md:text-4xl text-gray-900 text-center mb-4"
+                className="text-3xl md:text-4xl text-gray-900 text-center mb-4 h-[4%]"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Specific Model
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex items-center justify-center p-1 h-[56px] bg-[#FFFFFF]/30 backdrop-blur-md rounded-full border border-white/20">
+            <div className="flex items-center justify-center p-1 h-[5%] bg-[#FFFFFF]/30 backdrop-blur-md rounded-full border border-white/20 ">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -139,7 +139,7 @@ export function Hero() {
                 ))}
             </div>
             {/* Main Content Area */}
-            <div className="h-[720px] w-full relative flex items-center justify-center">
+            <div className="h-[71%] w-full relative flex items-center justify-center ">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
@@ -170,7 +170,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-140 -translate-y-4"
+                                        className="scale-120 -translate-y-4"
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
@@ -178,7 +178,7 @@ export function Hero() {
                                 {model.id === "row" && (
                                     <VideoPlayer
                                         src="/videos/row.webm"
-                                        className="scale-160 -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
+                                        className="scale-140  -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
                                         isActive={activeModel === "row"}
                                         onEnded={handleNext}
                                     />
@@ -186,7 +186,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-200 -translate-y-4 md:scale-100 md:-translate-y-6"
+                                        className=" -translate-y-4 md:scale-100 md:-translate-y-6"
                                         isActive={activeModel === "bike"}
                                         onEnded={handleNext}
                                     />
@@ -194,7 +194,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-120 -translate-y-6"
+                                        className=" -translate-y-6"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
@@ -206,7 +206,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Flex Flow at Bottom */}
-            <div className="w-full h-[70px] max-w-[1400px] flex flex-col lg:flex-row items-center justify-between mb-10">
+            <div className="w-full h-[10%] max-w-[1400px] flex flex-col lg:flex-row items-center justify-between mb-10 ">
 
 
                 {/* Left: Rating & Name */}

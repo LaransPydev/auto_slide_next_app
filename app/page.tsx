@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="h-screen w-full flex flex-col bg-gray-50 overflow-hidden">
-      <div className="flex-none"><Navbar /></div>
-      <div className="flex-1 relative min-h-0"><Hero /></div>
+      <div className="flex-none h-[5%]"><Navbar /></div>
+      <div className="flex-1 relative min-h-0 h-[95%]"><Hero /></div>
     </main>
   );
 }
