@@ -206,7 +206,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Flex Flow at Bottom */}
-            <div className="w-full h-[70px] max-w-[1400px] flex flex-col lg:flex-row items-center justify-between ">
+            <div className="w-full h-[70px] max-w-[1400px] flex flex-col lg:flex-row items-center justify-between mb-10">
 
 
                 {/* Left: Rating & Name */}
