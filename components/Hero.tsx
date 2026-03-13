@@ -230,7 +230,7 @@ export function Hero() {
 
                         {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
                                 {/* Screen Spec */}
                                 <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
@@ -338,7 +338,7 @@ export function Hero() {
                             </div>
                         ) : activeModel === "row" || activeModel === "bike" ? (
                             // sRow & sBike Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 min-w-max px-4">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
                                 {/* Screen Spec */}
                                 <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
@@ -455,7 +455,7 @@ export function Hero() {
 
                         ) : (
                             // Default Treadmill Specs
-                            <div className="flex items-center h-[75px] justify-between gap-4 md:gap-8 min-w-max px-4">
+                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
                                 {/* Screen Spec */}
                                 <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center">
@@ -499,7 +499,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Incline Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center min-w-[100x] border-r border-gray-300/60 pr-6">
                                     <div className="flex flex-col items-start pl-2">
                                         {/* Rising Bars */}
                                         <div className="flex items-end gap-[3px] h-5 mb-1 w-full pl-1">
