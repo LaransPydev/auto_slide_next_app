@@ -160,7 +160,7 @@ export function Hero() {
 
 
                 {/* Product Image */}
-                <div className="relative h-[60vh] w-full min-h-0 ">
+                <div className="relative h-[90%] w-full min-h-0 ">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -194,7 +194,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className=" -translate-y-6"
+                                        className="scale-110 -translate-y-6"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
@@ -226,13 +226,13 @@ export function Hero() {
 
                 {/* Center: Specs Bar */}
                 <div className="flex-1 w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center">
-                    <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60">
+                    <div className="flex items-center justify-center px-6 py-2 rounded-3xl bg-white/80 backdrop-blur-xl shadow-sm border border-white/60 w-full max-w-[700px] h-[82px] overflow-hidden">
 
                         {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
+                            <div className="flex items-center justify-between w-full h-full">
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -249,7 +249,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Practical cable Pull Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-4 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -276,7 +276,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Folding Function Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -304,7 +304,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Electric Motors Spec */}
-                                <div className="flex items-center justify-center min-w-[110px]">
+                                <div className="flex items-center justify-center w-1/4">
                                     <div className="relative border-x-2 border-gray-900 px-4 py-1 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -338,9 +338,9 @@ export function Hero() {
                             </div>
                         ) : activeModel === "row" || activeModel === "bike" ? (
                             // sRow & sBike Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
+                            <div className="flex items-center justify-between w-full h-full">
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -351,13 +351,13 @@ export function Hero() {
                                         <span className="text-3xl font-black text-gray-900 leading-none tracking-tight">21.5"</span>
                                         <div className="flex flex-col items-center leading-tight mt-1 gap-[1px]">
                                             <span className="text-[8px] font-bold text-gray-600 uppercase tracking-wide">with</span>
-                                            <span className="text-[10px] font-bold text-gray-900 tracking-tight">Sportstech Live</span>
+                                            <span className="text-[9px] font-bold text-gray-900 tracking-tight">Sportstech Live</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Magnetic Brake Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-4 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -393,7 +393,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Rotating Display Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="relative border-x-2 border-gray-900 px-3 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -420,7 +420,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Workout Video Spec */}
-                                <div className="flex items-center justify-center min-w-[110px]">
+                                <div className="flex items-center justify-center w-1/4">
                                     <div className="relative border-x-2 border-gray-900 px-5 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
@@ -455,10 +455,10 @@ export function Hero() {
 
                         ) : (
                             // Default Treadmill Specs
-                            <div className="flex items-center justify-between gap-4 md:gap-8 w-[640px] px-4">
+                            <div className="flex items-center justify-between w-full h-full">
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center min-w-[110px] border-r border-gray-300/60 pr-6">
-                                    <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
+                                    <div className="relative border-x-2 border-gray-900 px-3 py-1 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
                                         <div className="absolute top-0 right-0 w-2 h-0.5 bg-gray-900"></div>
@@ -474,7 +474,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Speed Spec */}
-                                <div className="flex items-center justify-center min-w-[100px] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="flex flex-col items-start gap-[2px]">
                                         {/* Top Lines */}
                                         <div className="flex flex-col gap-[3px] w-full items-start pl-2">
@@ -499,7 +499,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Incline Spec */}
-                                <div className="flex items-center justify-center min-w-[100x] border-r border-gray-300/60 pr-6">
+                                <div className="flex items-center justify-center w-1/4 border-r border-gray-300/60">
                                     <div className="flex flex-col items-start pl-2">
                                         {/* Rising Bars */}
                                         <div className="flex items-end gap-[3px] h-5 mb-1 w-full pl-1">
@@ -523,7 +523,7 @@ export function Hero() {
                                 </div>
 
                                 {/* Workout Video Spec */}
-                                <div className="flex items-center justify-center min-w-[110px]">
+                                <div className="flex items-center justify-center w-1/4">
                                     <div className="relative border-x-2 border-gray-900 px-5 py-1.5 flex flex-col items-center min-h-[55px] justify-center">
                                         {/* Bracket Caps */}
                                         <div className="absolute top-0 left-0 w-2 h-0.5 bg-gray-900"></div>
