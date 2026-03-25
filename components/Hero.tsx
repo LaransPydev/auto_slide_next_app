@@ -70,19 +70,19 @@ export function Hero() {
 
     return (
         <section
-            className="relative w-full overflow-hidden flex flex-col items-center pt-3 h-screen"
+            className="relative w-screen overflow-hidden flex flex-col items-center pt-3 h-screen"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* Header */}
             <h1
-                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 sm:h-[4%] px-4 sm:px-0"
+                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 h-auto px-4 sm:px-0"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Model
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 h-[6%] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 h-[6vh] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -204,7 +204,7 @@ export function Hero() {
 
                 {/* Center: Specs Bar (nested outline pill) */}
                 <div className="flex w-[1164px] lg:w-auto justify-start sm:justify-center items-center h-[90px]">
-                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[80%] shrink-0 opacity-100">
+                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[80%] opacity-100">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
