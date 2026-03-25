@@ -70,36 +70,34 @@ export function Hero() {
 
     return (
         <section
-            className="relative w-full overflow-hidden flex flex-col items-center pt-3 h-full"
+            className="relative w-full overflow-hidden flex flex-col items-center pt-3 min-h-screen md:h-full lg:h-full"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* Header */}
             <h1
-                className="text-3xl md:text-4xl text-gray-900 text-center mb-4 h-[4%]"
+                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 h-auto sm:h-[4%] px-4 sm:px-0"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Model
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex items-center justify-center p-1 h-[6%] bg-[#FFFFFF]/30 backdrop-blur-md rounded-full border border-white/20 ">
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 min-h-[6%] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
                         onClick={() => setActiveModel(model.id)}
-                        className={`px-8 h-full flex items-center justify-center rounded-full transition-all duration-300 ${activeModel === model.id
+                        className={`px-4 sm:px-8 py-2 sm:py-0 h-full flex items-center justify-center rounded-full transition-all duration-300 ${activeModel === model.id
                             ? "bg-[#D6E0FF] text-gray-900 border border-[#2b59c3] shadow-sm"
                             : "text-gray-600 hover:text-gray-900 border border-[#2b59c3]/0"
                             }`}
                         style={{
                             fontFamily: "var(--font-sohne), Söhne, sans-serif",
                             fontWeight: 500,
-                            fontSize: "16px",
-                            lineHeight: "28px",
                             letterSpacing: "-0.1px",
                         }}
                     >
-                        {model.label}
+                        <span className="text-[14px] sm:text-[16px] leading-[1.2] sm:leading-[28px] whitespace-nowrap">{model.label}</span>
                     </button>
                 ))}
             </div>
@@ -136,7 +134,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-150 "
+                                        className="scale-[1.2] sm:scale-150 "
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
@@ -144,7 +142,7 @@ export function Hero() {
                                 {model.id === "row" && (
                                     <VideoPlayer
                                         src="/videos/row.webm"
-                                        className="scale-160  -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
+                                        className="scale-[1.3] sm:scale-160 -translate-y-12 md:-translate-y-20 xl:-translate-y-25"
                                         isActive={activeModel === "row"}
                                         onEnded={handleNext}
                                     />
@@ -152,7 +150,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-125"
+                                        className="scale-110 sm:scale-125 -translate-y-4 sm:-translate-y-0"
                                         isActive={activeModel === "bike"}
                                         onEnded={handleNext}
                                     />
@@ -160,7 +158,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-125"
+                                        className="scale-110 sm:scale-125 -translate-y-4 sm:-translate-y-0"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
@@ -172,12 +170,12 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="absolute bottom-10 lg:bottom-12 mx-auto left-0 right-0 w-full max-w-[1164px] h-auto lg:h-[90px] px-6 lg:px-8 py-2 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm">
+            <div className="lg:absolute lg:bottom-12 mx-auto left-4 right-4 lg:left-0 lg:right-0 w-auto lg:w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 lg:px-8 py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm mt-10 lg:mt-0 mb-8 lg:mb-0 gap-6 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
-                <div className="flex items-center h-full gap-5">
+                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
                     {/* Rating & Name */}
-                    <div className="flex flex-col items-start justify-center min-w-[120px]">
+                    <div className="flex flex-col items-center sm:items-start justify-center min-w-[120px]">
                         <div className="flex items-center">
                             <div className="flex gap-[2px]">
                                 {[1,2,3,4].map(i => <Star key={i} size={14} fill="#DABC09" stroke="#DABC09" strokeWidth={1} />)}
@@ -185,28 +183,28 @@ export function Hero() {
                             </div>
                             <span className="text-gray-900 font-bold text-[11px] ml-1.5 mt-0.5 tracking-tight">610</span>
                         </div>
-                        <h2 className="text-[26px] leading-[1.1] font-black text-[#1E1E1E] tracking-tight mt-1">{MODELS.find(m => m.id === activeModel)?.label}</h2>
+                        <h2 className="text-[22px] sm:text-[26px] leading-[1.1] font-black text-[#1E1E1E] tracking-tight mt-1">{MODELS.find(m => m.id === activeModel)?.label}</h2>
                     </div>
 
                     {/* Vertical Divider */}
                     <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-[2px]"></div>
 
                     {/* Price Block */}
-                    <div className="hidden lg:flex flex-col items-start justify-center">
-                        <div className="flex items-center gap-2 mb-0.5">
-                            <span className="text-[#828282] line-through text-[11px] font-medium">2.299,00 €</span>
+                    <div className="flex sm:flex-col items-center sm:items-start justify-center gap-2 sm:gap-0">
+                        <div className="flex flex-col sm:flex-row items-baseline sm:items-center gap-1 sm:gap-2 sm:mb-0.5">
+                            <span className="text-[#828282] line-through text-[11px] font-medium hidden sm:inline-block">2.299,00 €</span>
                             <span className="bg-[#376F7B] text-white text-[9px] font-bold px-2 py-[2px] rounded-full tracking-wide">SPARE HEUTE 400 €</span>
                         </div>
-                        <div className="flex items-baseline gap-1 mt-0.5">
-                            <span className="text-[24px] leading-none font-black text-[#1E1E1E]">1.899,00 €</span>
+                        <div className="flex items-baseline gap-1 sm:mt-0.5">
+                            <span className="text-[20px] sm:text-[24px] leading-none font-black text-[#1E1E1E]">1.899,00 €</span>
                             <span className="text-[#1E1E1E]/60 text-[9px] font-medium ml-1">VAT included.</span>
                         </div>
                     </div>
                 </div>
 
                 {/* Center: Specs Bar (nested outline pill) */}
-                <div className="flex w-full lg:w-auto overflow-x-auto no-scrollbar flex justify-center items-center h-full lg:mx-6 mt-6 lg:mt-0">
-                    <div className="flex items-center justify-between p-[11.76px] rounded-[24px] border border-black/50 bg-transparent w-[460px] h-[75px] shrink-0">
+                <div className="flex w-full lg:w-auto overflow-x-auto no-scrollbar justify-start sm:justify-center items-center h-full lg:mx-6 pb-2 lg:pb-0 px-2 lg:px-0">
+                    <div className="flex items-center justify-center gap-[16px] p-[11.76px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[75px] shrink-0 opacity-100 mx-auto">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
@@ -288,8 +286,8 @@ export function Hero() {
                 </div>
 
                 {/* Right: CTA */}
-                <div className="flex justify-end lg:h-full items-center mt-6 lg:mt-0">
-                    <button className="group flex items-center justify-center w-[175px] h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[13px] transition-all whitespace-nowrap">
+                <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto">
+                    <button className="group flex items-center justify-center w-[220px] lg:w-[175px] h-[48px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[14px] lg:text-[13px] transition-all whitespace-nowrap">
                         Discover {MODELS.find(m => m.id === activeModel)?.label}
                         <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>
