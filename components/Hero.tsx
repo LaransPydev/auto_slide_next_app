@@ -70,19 +70,19 @@ export function Hero() {
 
     return (
         <section
-            className="relative w-full overflow-hidden flex flex-col items-center pt-3 h-full"
+            className="relative w-full overflow-hidden flex flex-col items-center pt-3 h-screen"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* Header */}
             <h1
-                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 h-auto sm:h-[4%] px-4 sm:px-0"
+                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 sm:h-[4%] px-4 sm:px-0"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Model
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 min-h-[6%] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 h-[6%] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="absolute bottom-10 lg:bottom-12 mx-auto left-4 right-4 lg:left-0 lg:right-0 w-auto lg:w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
+            <div className=" w-auto lg:w-full max-w-[1164px] h-[10%] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
