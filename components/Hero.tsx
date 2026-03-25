@@ -82,7 +82,7 @@ export function Hero() {
             </h1>
 
             {/* Model Selector Tabs */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center p-1 h-[6vh] gap-2 sm:gap-0 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
+            <div className="flex items-center justify-center p-1 h-[6vh] gap-2 sm:gap-1 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
                 {MODELS.map((model) => (
                     <button
                         key={model.id}
@@ -103,7 +103,7 @@ export function Hero() {
             </div>
 
             {/* Main Content Area */}
-            <div className="h-[71%] w-full relative flex items-center justify-center ">
+            <div className="h-[71vh] w-full relative flex items-center justify-center ">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className=" w-auto lg:w-full max-w-[1164px] h-[10%] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
+            <div className=" w-auto lg:w-full max-w-[120vh] h-[10vh] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
