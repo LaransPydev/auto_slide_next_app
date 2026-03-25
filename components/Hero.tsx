@@ -203,8 +203,8 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar (nested outline pill) */}
-                <div className="flex w-full lg:w-auto overflow-x-auto no-scrollbar justify-start sm:justify-center items-center h-full lg:mx-6 pb-2 lg:pb-0 px-2 lg:px-0">
-                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[75px] shrink-0 opacity-100 mx-auto">
+                <div className="flex w-[1164px] lg:w-auto justify-start sm:justify-center items-center h-[90px] lg:mx-6 pb-2 lg:pb-0 px-2 lg:px-0">
+                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[90%] shrink-0 opacity-100">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
