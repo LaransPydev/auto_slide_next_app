@@ -134,7 +134,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-[1.2] sm:scale-150 "
+                                        className="scale-120 -translate-y-4 "
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
@@ -142,7 +142,7 @@ export function Hero() {
                                 {model.id === "row" && (
                                     <VideoPlayer
                                         src="/videos/row.webm"
-                                        className="scale-[1.3] sm:scale-160 -translate-y-12 md:-translate-y-20 xl:-translate-y-25"
+                                        className="scale-130 -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
                                         isActive={activeModel === "row"}
                                         onEnded={handleNext}
                                     />
@@ -150,7 +150,7 @@ export function Hero() {
                                 {model.id === "bike" && (
                                     <VideoPlayer
                                         src="/videos/bike.webm"
-                                        className="scale-110 sm:scale-125 -translate-y-4 sm:-translate-y-0"
+                                        className="scale-130 -translate-y-4 md:scale-100 md:-translate-y-6"
                                         isActive={activeModel === "bike"}
                                         onEnded={handleNext}
                                     />
@@ -158,7 +158,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-110 sm:scale-125 -translate-y-4 sm:-translate-y-0"
+                                        className="scale-100 -translate-y-6"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
