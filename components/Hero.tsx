@@ -70,7 +70,7 @@ export function Hero() {
 
     return (
         <section
-            className="relative w-full overflow-hidden flex flex-col items-center pt-3 min-h-screen md:h-full lg:h-full"
+            className="relative w-full overflow-hidden flex flex-col items-center pt-3 h-full"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* Header */}
@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="lg:absolute lg:bottom-12 mx-auto left-4 right-4 lg:left-0 lg:right-0 w-auto lg:w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 lg:px-8 py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm mt-10 lg:mt-0 mb-8 lg:mb-0 gap-6 lg:gap-0">
+            <div className="absolute bottom-10 lg:bottom-12 mx-auto left-4 right-4 lg:left-0 lg:right-0 w-auto lg:w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
@@ -204,83 +204,76 @@ export function Hero() {
 
                 {/* Center: Specs Bar (nested outline pill) */}
                 <div className="flex w-full lg:w-auto overflow-x-auto no-scrollbar justify-start sm:justify-center items-center h-full lg:mx-6 pb-2 lg:pb-0 px-2 lg:px-0">
-                    <div className="flex items-center justify-center gap-[16px] p-[11.76px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[75px] shrink-0 opacity-100 mx-auto">
+                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[75px] shrink-0 opacity-100 mx-auto">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
-                            <div className="flex items-center justify-between w-full h-full gap-2">
+                            <>
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <ScreenSpecIcon />
                                 </div>
 
                                 {/* Practical cable Pull Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <PracticalCablePullSpecIcon />
                                 </div>
 
                                 {/* Folding Function Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <div className="relative w-full h-full flex flex-col items-center justify-center">
-
-                                        {/* Folding Icon */}
-                                            <FoldingFunctionSpecIcon />
-
-                                      
-                                    </div>
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                    <FoldingFunctionSpecIcon />
                                 </div>
 
+                                {/* Electric Motor Spec (Last item, no divider needed) */}
                                 <div className="flex items-center justify-center w-[78px] h-[52px]">
-                                    <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <ElectricMotorSpecIcon />
                                 </div>
-                                </div>
-                            </div>
+                            </>
                         ) : activeModel === "row" || activeModel === "bike" ? (
                             // sRow & sBike Specs
-                            <div className="flex items-center justify-between w-full h-full gap-2">
+                            <>
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <ScreenSpecIcon />
                                 </div>
 
                                 {/* Magnetic Brake Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <MagneticBrakeSpecIcon />
                                 </div>
 
                                 {/* Rotating Display Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <RotatingDisplaySpecIcon />
                                 </div>
 
                                 <div className="flex items-center justify-center w-[78px] h-[52px]">
                                     <WorkoutVideoSpecIcon />
                                 </div>
-                            </div>
+                            </>
 
                         ) : (
                             // Default Treadmill Specs
-                            <div className="flex items-center justify-between w-full h-full gap-2">
+                            <>
                                 {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <ScreenSpecIcon />
                                 </div>
 
                                 {/* Speed Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <SpeedSpecIcon />
                                 </div>
 
                                 {/* Incline Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:right-[-12px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
+                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
                                     <InclineSpecIcon />
                                 </div>
 
                                 <div className="flex items-center justify-center w-[78px] h-[52px]">
                                     <WorkoutVideoSpecIcon />
                                 </div>
-                            </div>
+                            </>
                         )}
                     </div>
                 </div>
