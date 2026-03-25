@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className=" w-auto lg:w-full max-w-[120vh] h-[10vh] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
+            <div className=" w-[60vw] h-[10vh] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
