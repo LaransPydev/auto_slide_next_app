@@ -155,7 +155,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-108 -translate-y-6"
+                                        className="scale-100 -translate-y-6"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
@@ -169,13 +169,36 @@ export function Hero() {
             {/* ━━━ 4. BOTTOM INFO BAR (SVG) ━━━ */}
             <div className="flex-shrink-0 flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[14%] w-[85%] lg:w-[75%]">
                 <div className="relative w-full h-full">
-                    <img
-                        key={activeModel}
-                        src={`/specs/bar-${activeModel}.svg`}
-                        alt={`${MODELS.find(m => m.id === activeModel)?.label} specs`}
-                        className="w-full h-full object-contain object-left"
-                        draggable={false}
-                    />
+                    {MODELS.map((model) => (
+                        <img
+                            key={model.id}
+                            src={`/specs/bar-${model.id}.svg`}
+                            alt={`${model.label} specs`}
+                            className="absolute inset-0 w-full h-full object-contain object-left transition-opacity duration-500 ease-in-out"
+                            style={{ opacity: activeModel === model.id ? 1 : 0 }}
+                            draggable={false}
+                        />
+                    ))}
+
+                    {/* Discover button interactive overlay — matches the dark pill at x=947,y=25,w=175,h=40 inside 1164×90 SVG */}
+                    <button
+                        className="absolute group"
+                        style={{
+                            left:   `${(947.594 / 1164) * 100}%`,
+                            top:    `${(25      / 90)   * 100}%`,
+                            width:  `${(174.815 / 1164) * 100}%`,
+                            height: `${(40      / 90)   * 100}%`,
+                            borderRadius: "20px",
+                        }}
+                        onClick={() => {}}
+                    >
+                        {/* ripple layer */}
+                        <span className="absolute inset-0 rounded-[20px] bg-white/0 group-hover:bg-white/10 group-active:bg-white/20 transition-colors duration-200" />
+                        {/* glow ring on hover */}
+                        <span className="absolute inset-0 rounded-[20px] ring-0 group-hover:ring-2 group-hover:ring-white/40 group-active:ring-white/60 transition-all duration-200" />
+                        {/* subtle scale press */}
+                        <span className="absolute inset-0 rounded-[20px] scale-100 group-active:scale-95 transition-transform duration-150 origin-center" />
+                    </button>
                 </div>
             </div>
         </section>
