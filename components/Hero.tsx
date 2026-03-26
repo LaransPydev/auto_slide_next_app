@@ -215,11 +215,11 @@ export function Hero() {
             </div>
 
             {/* ━━━ 4. BOTTOM INFO BAR ━━━ */}
-            <div className="flex-shrink-0 w-screen flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[12%]">
-                <div className="w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-white/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 lg:gap-0">
+            <div className="flex-shrink-0  flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[14%] w-[65%]">
+                <div className="w-full h-full px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-white/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 lg:gap-0">
 
                     {/* ── LEFT: Rating / Name / Price ── */}
-                    <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-0 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row items-center h-full gap-2 sm:gap-0 w-full lg:w-auto text-center sm:text-left flex-shrink-0 w-[20%]">
 
                         {/* Rating & Name */}
                         <div className="flex flex-col items-center sm:items-start justify-center min-w-[90px] sm:min-w-[110px]">
@@ -234,12 +234,11 @@ export function Hero() {
                                 {MODELS.find(m => m.id === activeModel)?.label}
                             </h2>
                         </div>
-
-                        {/* Vertical Divider (between name & price) */}
-                        <div className="hidden sm:block w-[0.6px] h-[48px] bg-[#929292] mx-3 lg:mx-4"></div>
-
-                        {/* Price Block */}
-                        <div className="flex sm:flex-col items-center sm:items-start justify-center gap-2 sm:gap-0">
+                    </div>
+                    <div className="hidden  sm:block w-[0.6px] h-[48px] bg-[#929292] mx-3 lg:mx-4">
+                    </div>
+                    
+                    <div className=" items-center sm:items-start justify-center gap-2 sm:gap-0">
                             <div className="flex flex-col sm:flex-row items-baseline sm:items-center gap-1 sm:gap-2">
                                 <span className="text-[#828282] line-through text-[11px] font-medium hidden sm:inline-block">2.299,00 €</span>
                                 <span className="bg-[#376F7B] text-white text-[9px] font-bold px-2 py-[2px] rounded-full tracking-wide whitespace-nowrap">SPARE HEUTE 400 €</span>
@@ -249,18 +248,16 @@ export function Hero() {
                                 <span className="text-[#1D1D1B]/60 text-[9px] font-medium ml-0.5 whitespace-nowrap">VAT included.</span>
                             </div>
                         </div>
-                    </div>
-
                     {/* ── CENTER: Specs Bar ── */}
-                    <div className="hidden sm:flex flex-1 justify-center items-center h-full min-w-0 mx-2 lg:mx-4">
-                        <div className="flex items-center gap-[10px] sm:gap-[14px] lg:gap-[18px] px-4 sm:px-6 lg:px-8 rounded-[20px] sm:rounded-[24px] border border-black/50 bg-transparent h-[56px] sm:h-[60px] lg:h-[65%]">
+                    <div className="w-[50%] flex justify-center items-center h-full">
+                        <div className="flex items-center justify-center w-full gap-[10px] sm:gap-[14px] lg:gap-[50px] rounded-[20px] sm:rounded-[24px] border border-black/50 bg-transparent h-[90%]">
                             <SpecsContent activeModel={activeModel} />
                         </div>
                     </div>
 
                     {/* ── RIGHT: CTA Button ── */}
-                    <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink-0">
-                        <button className="group flex items-center justify-center w-full sm:w-auto lg:w-auto px-5 sm:px-6 h-[40px] sm:h-[42px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-medium text-[13px] sm:text-[14px] transition-all whitespace-nowrap">
+                    <div className="w-[174px] flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink">
+                        <button className="group flex items-center justify-center  sm:w-auto px-5 sm:px-6 h-[40px] sm:h-[42px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-medium text-[13px] sm:text-[14px] transition-all whitespace-nowrap">
                             Discover {MODELS.find(m => m.id === activeModel)?.label}
                             <ChevronRight size={16} className="ml-1.5 group-hover:translate-x-1 transition-transform" />
                         </button>
