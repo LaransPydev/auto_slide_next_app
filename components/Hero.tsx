@@ -47,6 +47,51 @@ function VideoPlayer({ src, onEnded, className = "", isActive = false }: VideoPl
     );
 }
 
+/* ─── Spec icon wrapper with optional right divider ─── */
+function SpecItem({ children, showDivider = true }: { children: React.ReactNode; showDivider?: boolean }) {
+    return (
+        <div
+            className={`flex items-center justify-center w-[55px] sm:w-[65px] lg:w-[78px] h-[40px] sm:h-[46px] lg:h-[52px] flex-shrink-0
+                ${showDivider ? "border-r border-black/50" : ""}`}
+        >
+            {children}
+        </div>
+    );
+}
+
+/* ─── Specs bar content by model ─── */
+function SpecsContent({ activeModel }: { activeModel: string }) {
+    if (activeModel === "gym-pro") {
+        return (
+            <>
+                <SpecItem><ScreenSpecIcon /></SpecItem>
+                <SpecItem><PracticalCablePullSpecIcon /></SpecItem>
+                <SpecItem><FoldingFunctionSpecIcon /></SpecItem>
+                <SpecItem showDivider={false}><ElectricMotorSpecIcon /></SpecItem>
+            </>
+        );
+    }
+    if (activeModel === "row" || activeModel === "bike") {
+        return (
+            <>
+                <SpecItem><ScreenSpecIcon /></SpecItem>
+                <SpecItem><MagneticBrakeSpecIcon /></SpecItem>
+                <SpecItem><RotatingDisplaySpecIcon /></SpecItem>
+                <SpecItem showDivider={false}><WorkoutVideoSpecIcon /></SpecItem>
+            </>
+        );
+    }
+    // Default: treadmill specs
+    return (
+        <>
+            <SpecItem><ScreenSpecIcon /></SpecItem>
+            <SpecItem><SpeedSpecIcon /></SpecItem>
+            <SpecItem><InclineSpecIcon /></SpecItem>
+            <SpecItem showDivider={false}><WorkoutVideoSpecIcon /></SpecItem>
+        </>
+    );
+}
+
 export function Hero() {
     const [activeModel, setActiveModel] = useState("pro");
 
@@ -66,44 +111,46 @@ export function Hero() {
         });
     }, []);
 
-    // Auto-slider logic replaced by video onEnded callback
-
     return (
         <section
-            className="relative w-screen overflow-hidden flex flex-col items-center pt-3 h-screen"
+            className="overflow-hidden relative w-full h-full flex flex-col items-center"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
-            {/* Header */}
-            <h1
-                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-5 sm:mb-6 lg:mb-7 h-[3vh] px-4 sm:px-0"
-                style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
-            >
-                Discover Our Premium Model
-            </h1>
-
-            {/* Model Selector Tabs */}
-            <div className="flex items-center justify-center p-1 h-[6vh] gap-2 sm:gap-1 bg-[#FFFFFF]/30 backdrop-blur-md rounded-2xl sm:rounded-full border border-white/20 mx-4 sm:mx-0">
-                {MODELS.map((model) => (
-                    <button
-                        key={model.id}
-                        onClick={() => setActiveModel(model.id)}
-                        className={`px-4 sm:px-8 py-2 sm:py-0 h-full flex items-center justify-center rounded-full transition-all duration-300 ${activeModel === model.id
-                            ? "bg-[#D6E0FF] text-gray-900 border border-[#2b59c3] shadow-sm"
-                            : "text-gray-600 hover:text-gray-900 border border-[#2b59c3]/0"
-                            }`}
-                        style={{
-                            fontFamily: "var(--font-sohne), Söhne, sans-serif",
-                            fontWeight: 500,
-                            letterSpacing: "-0.1px",
-                        }}
-                    >
-                        <span className="text-[14px] sm:text-[16px] leading-[1.2] sm:leading-[28px] whitespace-nowrap">{model.label}</span>
-                    </button>
-                ))}
+            {/* ━━━ 1. HEADER ━━━ */}
+            <div className=" p-4 h-[10%]">
+                <h1
+                    className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
+                    style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
+                >
+                    Discover Our Premium Model
+                </h1>
             </div>
 
-            {/* Main Content Area */}
-            <div className="h-[71vh] w-full relative flex items-center justify-center ">
+            {/* ━━━ 2. MODEL SELECTOR TABS ━━━ */}
+            <div className="h-[6%]">
+                <div className="flex items-center justify-center p-1 gap-1 bg-[#FFFFFF]/30 backdrop-blur-md rounded-full border border-white/20 mx-4 sm:mx-0 h-full ">
+                    {MODELS.map((model) => (
+                        <button
+                            key={model.id}
+                            onClick={() => setActiveModel(model.id)}
+                            className={`px-4 sm:px-8 h-full flex items-center justify-center rounded-full transition-all duration-300 ${activeModel === model.id
+                                ? "bg-[#D6E0FF] text-gray-900 border border-[#2b59c3] shadow-sm"
+                                : "text-gray-600 hover:text-gray-900 border border-[#2b59c3]/0"
+                                }`}
+                            style={{
+                                fontFamily: "var(--font-sohne), Söhne, sans-serif",
+                                fontWeight: 500,
+                                letterSpacing: "-0.1px",
+                            }}
+                        >
+                            <span className="text-[14px] sm:text-[16px] leading-[28px] whitespace-nowrap">{model.label}</span>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* ━━━ 3. PRODUCT AREA (takes all remaining space) ━━━ */}
+            <div className=" w-full relative flex items-center justify-center h-[72%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
@@ -113,7 +160,6 @@ export function Hero() {
                     >
                         <ChevronLeft size={32} />
                     </button>
-
                     <button
                         onClick={handleNext}
                         className="pointer-events-auto text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block"
@@ -122,9 +168,8 @@ export function Hero() {
                     </button>
                 </div>
 
-
-                {/* Product Image */}
-                <div className="relative h-[90%] w-full min-h-0 ">
+                {/* Product Video Slider */}
+                <div className="h-full">
                     <div
                         className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
                         style={{ transform: `translateX(-${MODELS.findIndex(m => m.id === activeModel) * 100}%)` }}
@@ -134,7 +179,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-120 -translate-y-4 "
+                                        className="scale-120 -translate-y-4"
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
@@ -169,123 +214,60 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="w-[92vw] sm:w-[88vw] md:w-[80vw] lg:w-[72vw] xl:w-[65vw] h-auto lg:h-[11vh] px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-6 mb-4 lg:mb-0">
+            {/* ━━━ 4. BOTTOM INFO BAR ━━━ */}
+            <div className="flex-shrink-0 w-screen flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[12%]">
+                <div className="w-full max-w-[1164px] h-auto lg:h-[90px] px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-white/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 lg:gap-0">
 
-                {/* Left: Rating, Name & Price */}
-                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 lg:gap-6 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
-                    {/* Rating & Name */}
-                    <div className="flex flex-col items-center sm:items-start justify-center min-w-[120px]">
-                        <div className="flex items-center">
-                            <div className="flex gap-[2px]">
-                                {[1,2,3,4].map(i => <Star key={i} size={14} fill="#DABC09" stroke="#DABC09" strokeWidth={1} />)}
-                                <Star size={14} fill="transparent" stroke="#4B5563" strokeWidth={1.5} />
+                    {/* ── LEFT: Rating / Name / Price ── */}
+                    <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-0 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
+
+                        {/* Rating & Name */}
+                        <div className="flex flex-col items-center sm:items-start justify-center min-w-[90px] sm:min-w-[110px]">
+                            <div className="flex items-center">
+                                <div className="flex gap-[2px]">
+                                    {[1,2,3,4].map(i => <Star key={i} size={13} fill="#DABC09" stroke="#DABC09" strokeWidth={1} />)}
+                                    <Star size={13} fill="transparent" stroke="#222222" strokeWidth={1} />
+                                </div>
+                                <span className="text-[#1E1E1E] font-bold text-[11px] ml-1.5 mt-0.5 tracking-tight">610</span>
                             </div>
-                            <span className="text-gray-900 font-bold text-[11px] ml-1.5 mt-0.5 tracking-tight">610</span>
+                            <h2 className="text-[18px] sm:text-[22px] lg:text-[26px] leading-[1.1] font-black text-[#1E1E1E] tracking-tight mt-0.5">
+                                {MODELS.find(m => m.id === activeModel)?.label}
+                            </h2>
                         </div>
-                        <h2 className="text-[22px] sm:text-[26px] leading-[1.1] font-black text-[#1E1E1E] tracking-tight mt-1">{MODELS.find(m => m.id === activeModel)?.label}</h2>
+
+                        {/* Vertical Divider (between name & price) */}
+                        <div className="hidden sm:block w-[0.6px] h-[48px] bg-[#929292] mx-3 lg:mx-4"></div>
+
+                        {/* Price Block */}
+                        <div className="flex sm:flex-col items-center sm:items-start justify-center gap-2 sm:gap-0">
+                            <div className="flex flex-col sm:flex-row items-baseline sm:items-center gap-1 sm:gap-2">
+                                <span className="text-[#828282] line-through text-[11px] font-medium hidden sm:inline-block">2.299,00 €</span>
+                                <span className="bg-[#376F7B] text-white text-[9px] font-bold px-2 py-[2px] rounded-full tracking-wide whitespace-nowrap">SPARE HEUTE 400 €</span>
+                            </div>
+                            <div className="flex items-baseline gap-1 mt-0.5">
+                                <span className="text-[16px] sm:text-[20px] lg:text-[24px] leading-none font-black text-[#1E1E1E]">1.899,00 €</span>
+                                <span className="text-[#1D1D1B]/60 text-[9px] font-medium ml-0.5 whitespace-nowrap">VAT included.</span>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Vertical Divider */}
-                    <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-2 lg:mx-3"></div>
-
-                    {/* Price Block */}
-                    <div className="flex sm:flex-col h- items-center sm:items-start justify-center gap-2 sm:gap-0">
-                        <div className="flex flex-col sm:flex-row items-baseline sm:items-center gap-1 sm:gap-2 sm:mb-0.5">
-                            <span className="text-[#828282] line-through text-[11px] font-medium hidden sm:inline-block">2.299,00 €</span>
-                            <span className="bg-[#376F7B] text-white text-[9px] font-bold px-2 py-[2px] rounded-full tracking-wide">SPARE HEUTE 400 €</span>
-                        </div>
-                        <div className="flex items-baseline gap-1 sm:mt-0.5">
-                            <span className="text-[20px] sm:text-[24px] leading-none font-black text-[#1E1E1E]">1.899,00 €</span>
-                            <span className="text-[#1E1E1E]/60 text-[9px] font-medium ml-1">VAT included.</span>
+                    {/* ── CENTER: Specs Bar ── */}
+                    <div className="hidden sm:flex flex-1 justify-center items-center h-full min-w-0 mx-2 lg:mx-4">
+                        <div className="flex items-center gap-[10px] sm:gap-[14px] lg:gap-[18px] px-4 sm:px-6 lg:px-8 rounded-[20px] sm:rounded-[24px] border border-black/50 bg-transparent h-[56px] sm:h-[60px] lg:h-[65%]">
+                            <SpecsContent activeModel={activeModel} />
                         </div>
                     </div>
-                </div>
 
-                {/* Center: Specs Bar (nested outline pill) */}
-                <div className="hidden sm:flex flex-1 justify-center px-4 sm:px-0 items-center h-auto sm:h-[70px] lg:h-[90px] min-w-0 mx-2 lg:mx-4">
-                    <div className="flex items-center justify-between p-2 sm:p-[11.76px] px-3 sm:px-[20px] rounded-[16px] sm:rounded-[24px] border-[1px] border-black/50 bg-transparent w-full sm:w-[380px] md:w-[420px] lg:w-[460px] h-auto sm:h-[80%] opacity-100">
-
-                            {activeModel === "gym-pro" ? (
-                            // sGym Pro Specs
-                            <>
-                                {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <ScreenSpecIcon />
-                                </div>
-
-                                {/* Practical cable Pull Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <PracticalCablePullSpecIcon />
-                                </div>
-
-                                {/* Folding Function Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <FoldingFunctionSpecIcon />
-                                </div>
-
-                                {/* Electric Motor Spec (Last item, no divider needed) */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px]">
-                                    <ElectricMotorSpecIcon />
-                                </div>
-                            </>
-                        ) : activeModel === "row" || activeModel === "bike" ? (
-                            // sRow & sBike Specs
-                            <>
-                                {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <ScreenSpecIcon />
-                                </div>
-
-                                {/* Magnetic Brake Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <MagneticBrakeSpecIcon />
-                                </div>
-
-                                {/* Rotating Display Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <RotatingDisplaySpecIcon />
-                                </div>
-
-                                <div className="flex items-center justify-center w-[78px] h-[52px]">
-                                    <WorkoutVideoSpecIcon />
-                                </div>
-                            </>
-
-                        ) : (
-                            // Default Treadmill Specs
-                            <>
-                                {/* Screen Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <ScreenSpecIcon />
-                                </div>
-
-                                {/* Speed Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <SpeedSpecIcon />
-                                </div>
-
-                                {/* Incline Spec */}
-                                <div className="flex items-center justify-center w-[78px] h-[52px] relative after:content-[''] after:absolute after:-right-[14px] after:top-1/2 after:-translate-y-1/2 after:w-[1px] after:h-[27px] after:bg-black after:opacity-50">
-                                    <InclineSpecIcon />
-                                </div>
-
-                                <div className="flex items-center justify-center w-[78px] h-[52px]">
-                                    <WorkoutVideoSpecIcon />
-                                </div>
-                            </>
-                        )}
+                    {/* ── RIGHT: CTA Button ── */}
+                    <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink-0">
+                        <button className="group flex items-center justify-center w-full sm:w-auto lg:w-auto px-5 sm:px-6 h-[40px] sm:h-[42px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-medium text-[13px] sm:text-[14px] transition-all whitespace-nowrap">
+                            Discover {MODELS.find(m => m.id === activeModel)?.label}
+                            <ChevronRight size={16} className="ml-1.5 group-hover:translate-x-1 transition-transform" />
+                        </button>
                     </div>
-                </div>
 
-                {/* Right: CTA */}
-                <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink-0">
-                    <button className="group flex items-center justify-center w-full sm:w-[220px] lg:w-[175px] h-[44px] sm:h-[48px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[13px] sm:text-[14px] lg:text-[13px] transition-all whitespace-nowrap">
-                        Discover {MODELS.find(m => m.id === activeModel)?.label}
-                        <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     );
 }

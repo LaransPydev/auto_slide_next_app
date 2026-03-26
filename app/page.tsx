@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="md:h-screen w-full flex flex-col bg-gray-50 overflow-y-auto md:overflow-hidden">
-      <div className="flex-none"><Navbar /></div>
-      <div className="flex-1 relative min-h-screen md:min-h-0"><Hero /></div>
+    <main className="h-screen">
+      <div className="h-[5%]"><Navbar /></div>
+      <div className="h-[95%]"><Hero /></div>
     </main>
   );
 }
