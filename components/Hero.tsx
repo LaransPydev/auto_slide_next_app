@@ -155,7 +155,7 @@ export function Hero() {
                                 {model.id === "gym-pro" && (
                                     <VideoPlayer
                                         src="/videos/gym-pro.webm"
-                                        className="scale-100 -translate-y-6"
+                                        className="scale-108"
                                         isActive={activeModel === "gym-pro"}
                                         onEnded={handleNext}
                                     />
