@@ -215,7 +215,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 4. BOTTOM INFO BAR ━━━ */}
-            <div className="flex-shrink-0  flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[14%] w-[65%]">
+            <div className="flex-shrink-0  flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[14%] w-[80%]">
                 <div className="w-full h-full px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-white/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 lg:gap-0">
 
                     {/* ── LEFT: Rating / Name / Price ── */}
