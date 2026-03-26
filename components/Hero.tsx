@@ -75,7 +75,7 @@ export function Hero() {
         >
             {/* Header */}
             <h1
-                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-6 sm:mb-8 lg:mb-8 px-4 sm:px-0"
+                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-5 sm:mb-6 lg:mb-7 h-[3vh] px-4 sm:px-0"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Model
@@ -103,7 +103,7 @@ export function Hero() {
             </div>
 
             {/* Main Content Area */}
-            <div className="flex-1 w-full relative flex items-center justify-center">
+            <div className="h-[71vh] w-full relative flex items-center justify-center ">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="w-[94vw] sm:w-[92vw] md:w-[90vw] lg:w-[90vw] max-w-[1200px] h-auto lg:h-[100px] px-5 sm:px-7 md:px-10 lg:px-12 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-8 mb-4 lg:mb-6">
+            <div className="w-[92vw] sm:w-[88vw] md:w-[80vw] lg:w-[72vw] xl:w-[65vw] h-auto lg:h-[11vh] px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-6 mb-4 lg:mb-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 lg:gap-6 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
@@ -187,7 +187,7 @@ export function Hero() {
                     </div>
 
                     {/* Vertical Divider */}
-                    <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-4"></div>
+                    <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-2 lg:mx-3"></div>
 
                     {/* Price Block */}
                     <div className="flex sm:flex-col h- items-center sm:items-start justify-center gap-2 sm:gap-0">
@@ -203,8 +203,8 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar (nested outline pill) */}
-                <div className="hidden sm:flex flex-1 justify-center items-center h-auto sm:h-[70px] lg:h-[90px] min-w-0 mx-4 lg:mx-6">
-                    <div className="flex items-center justify-between p-2 sm:p-[11.76px] px-4 sm:px-[24px] rounded-[16px] sm:rounded-[24px] border-[1px] border-black/50 bg-transparent w-full max-w-[480px] h-auto sm:h-[80%] opacity-100">
+                <div className="hidden sm:flex flex-1 justify-center px-4 sm:px-0 items-center h-auto sm:h-[70px] lg:h-[90px] min-w-0 mx-2 lg:mx-4">
+                    <div className="flex items-center justify-between p-2 sm:p-[11.76px] px-3 sm:px-[20px] rounded-[16px] sm:rounded-[24px] border-[1px] border-black/50 bg-transparent w-full sm:w-[380px] md:w-[420px] lg:w-[460px] h-auto sm:h-[80%] opacity-100">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
@@ -280,7 +280,7 @@ export function Hero() {
 
                 {/* Right: CTA */}
                 <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink-0">
-                    <button className="group flex items-center justify-center w-full sm:w-[220px] lg:w-[190px] h-[44px] sm:h-[48px] lg:h-[44px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[13px] sm:text-[14px] transition-all whitespace-nowrap">
+                    <button className="group flex items-center justify-center w-full sm:w-[220px] lg:w-[175px] h-[44px] sm:h-[48px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[13px] sm:text-[14px] lg:text-[13px] transition-all whitespace-nowrap">
                         Discover {MODELS.find(m => m.id === activeModel)?.label}
                         <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>
