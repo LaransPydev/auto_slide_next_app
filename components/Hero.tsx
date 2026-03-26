@@ -75,7 +75,7 @@ export function Hero() {
         >
             {/* Header */}
             <h1
-                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-4 h-[3vh] px-4 sm:px-0"
+                className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center mb-5 sm:mb-6 lg:mb-7 h-[3vh] px-4 sm:px-0"
                 style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
             >
                 Discover Our Premium Model
@@ -170,10 +170,10 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className="w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[60vw] h-auto lg:h-[11vh] px-3 sm:px-4 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-0 mb-4 lg:mb-0">
+            <div className="w-[92vw] sm:w-[88vw] md:w-[80vw] lg:w-[72vw] xl:w-[65vw] h-auto lg:h-[11vh] px-4 sm:px-6 md:px-8 lg:px-10 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-6 mb-4 lg:mb-0">
 
                 {/* Left: Rating, Name & Price */}
-                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-4 lg:gap-5 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 lg:gap-6 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
                     {/* Rating & Name */}
                     <div className="flex flex-col items-center sm:items-start justify-center min-w-[120px]">
                         <div className="flex items-center">
@@ -187,7 +187,7 @@ export function Hero() {
                     </div>
 
                     {/* Vertical Divider */}
-                    <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-[2px]"></div>
+                    <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-2 lg:mx-3"></div>
 
                     {/* Price Block */}
                     <div className="flex sm:flex-col h- items-center sm:items-start justify-center gap-2 sm:gap-0">
@@ -203,7 +203,7 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar (nested outline pill) */}
-                <div className="hidden sm:flex w-full lg:w-auto justify-center items-center h-auto sm:h-[70px] lg:h-[90px] flex-shrink min-w-0">
+                <div className="hidden sm:flex flex-1 justify-center items-center h-auto sm:h-[70px] lg:h-[90px] min-w-0 mx-2 lg:mx-4">
                     <div className="flex items-center justify-between p-2 sm:p-[11.76px] px-3 sm:px-[20px] rounded-[16px] sm:rounded-[24px] border-[1px] border-black/50 bg-transparent w-full sm:w-[380px] md:w-[420px] lg:w-[460px] h-auto sm:h-[80%] opacity-100">
 
                             {activeModel === "gym-pro" ? (
