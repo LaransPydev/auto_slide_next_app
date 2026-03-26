@@ -170,10 +170,10 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className=" w-[60vw] h-[11vh] px-4 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-4 lg:gap-0">
+            <div className="w-[92vw] sm:w-[85vw] md:w-[75vw] lg:w-[60vw] h-auto lg:h-[11vh] px-3 sm:px-4 py-3 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur rounded-[20px] sm:rounded-[24px] flex flex-col lg:flex-row items-center justify-between border border-white/40 shadow-sm gap-3 sm:gap-4 lg:gap-0 mb-4 lg:mb-0">
 
                 {/* Left: Rating, Name & Price */}
-                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-4 lg:gap-5 w-full lg:w-auto text-center sm:text-left flex-shrink-0">
                     {/* Rating & Name */}
                     <div className="flex flex-col items-center sm:items-start justify-center min-w-[120px]">
                         <div className="flex items-center">
@@ -203,8 +203,8 @@ export function Hero() {
                 </div>
 
                 {/* Center: Specs Bar (nested outline pill) */}
-                <div className="flex w-[1164px] lg:w-auto justify-start sm:justify-center items-center h-[90px]">
-                    <div className="flex items-center justify-between p-[11.76px] px-[20px] rounded-[24px] border-[1px] border-black/50 bg-transparent w-[460px] h-[80%] opacity-100">
+                <div className="hidden sm:flex w-full lg:w-auto justify-center items-center h-auto sm:h-[70px] lg:h-[90px] flex-shrink min-w-0">
+                    <div className="flex items-center justify-between p-2 sm:p-[11.76px] px-3 sm:px-[20px] rounded-[16px] sm:rounded-[24px] border-[1px] border-black/50 bg-transparent w-full sm:w-[380px] md:w-[420px] lg:w-[460px] h-auto sm:h-[80%] opacity-100">
 
                             {activeModel === "gym-pro" ? (
                             // sGym Pro Specs
@@ -279,8 +279,8 @@ export function Hero() {
                 </div>
 
                 {/* Right: CTA */}
-                <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto">
-                    <button className="group flex items-center justify-center w-[220px] lg:w-[175px] h-[48px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[14px] lg:text-[13px] transition-all whitespace-nowrap">
+                <div className="flex justify-center lg:justify-end lg:h-full items-center w-full lg:w-auto flex-shrink-0">
+                    <button className="group flex items-center justify-center w-full sm:w-[220px] lg:w-[175px] h-[44px] sm:h-[48px] lg:h-[40px] bg-[#1E1E1E] hover:bg-black text-white rounded-full font-bold text-[13px] sm:text-[14px] lg:text-[13px] transition-all whitespace-nowrap">
                         Discover {MODELS.find(m => m.id === activeModel)?.label}
                         <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>
