@@ -68,7 +68,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className="pt-3 h-[8%]">
+            <div className="pt-2 h-[8%]">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
@@ -79,7 +79,7 @@ export function Hero() {
 
             {/* ━━━ 2. MODEL SELECTOR TABS ━━━ */}
             <div className="h-[7%]">
-                <div className="flex items-center justify-center p-1 gap-1 bg-[#EBECFB]/30 backdrop-blur-md rounded-full border border-white/20 mx-4 sm:mx-0 h-full">
+                <div className="flex items-center justify-center gap-1 bg-[#EBECFB]/30 backdrop-blur-md rounded-full border border-white/20 mx-4 sm:mx-0 h-full">
                     {MODELS.map((model) => (
                         <button
                             key={model.id}
