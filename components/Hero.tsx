@@ -167,20 +167,26 @@ export function Hero() {
             </div>
 
             {/* ━━━ 4. BOTTOM INFO BAR (SVG) ━━━ */}
-            <div className="flex-shrink-0 flex justify-center px-3 sm:px-4 pb-3 sm:pb-4 lg:pb-5 h-[14%] w-[85%] lg:w-[75%]">
-                <div className="relative w-full h-full">
+            {/* Outer row: full width, centres the inner box, provides bottom padding */}
+            <div className="flex-shrink-0 flex items-center justify-center w-full pb-3 sm:pb-4 lg:pb-5 h-[14%] px-3 sm:px-6">
+                {/* Inner box: locked to the SVG's 1164:90 aspect ratio so it always
+                    wraps the image exactly — no empty space, perfectly centred */}
+                <div
+                    className="relative h-full"
+                    style={{ aspectRatio: "1164 / 90", maxWidth: "100%" }}
+                >
                     {MODELS.map((model) => (
                         <img
                             key={model.id}
                             src={`/specs/bar-${model.id}.svg`}
                             alt={`${model.label} specs`}
-                            className="absolute inset-0 w-full h-full object-contain object-left transition-opacity duration-500 ease-in-out"
+                            className="absolute inset-0 w-full h-full object-fill transition-opacity duration-500 ease-in-out"
                             style={{ opacity: activeModel === model.id ? 1 : 0 }}
                             draggable={false}
                         />
                     ))}
 
-                    {/* Discover button interactive overlay — matches the dark pill at x=947,y=25,w=175,h=40 inside 1164×90 SVG */}
+                    {/* Discover button overlay — pixel-accurate to x=947,y=25,w=175,h=40 in 1164×90 */}
                     <button
                         className="absolute group"
                         style={{
@@ -192,11 +198,8 @@ export function Hero() {
                         }}
                         onClick={() => {}}
                     >
-                        {/* ripple layer */}
                         <span className="absolute inset-0 rounded-[20px] bg-white/0 group-hover:bg-white/10 group-active:bg-white/20 transition-colors duration-200" />
-                        {/* glow ring on hover */}
                         <span className="absolute inset-0 rounded-[20px] ring-0 group-hover:ring-2 group-hover:ring-white/40 group-active:ring-white/60 transition-all duration-200" />
-                        {/* subtle scale press */}
                         <span className="absolute inset-0 rounded-[20px] scale-100 group-active:scale-95 transition-transform duration-150 origin-center" />
                     </button>
                 </div>
