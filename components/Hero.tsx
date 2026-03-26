@@ -170,7 +170,7 @@ export function Hero() {
             </div>
 
             {/* Bottom Info Bar - Glass Pill Layout */}
-            <div className=" w-[60vw] h-[10vh] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
+            <div className=" w-[75vw] h-[10vh] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-0 bg-[#FFFFFF99]/60 backdrop-blur-md rounded-[24px] flex flex-col lg:flex-row items-center justify-between z-30 border border-white/40 shadow-sm gap-4 lg:gap-0">
 
                 {/* Left: Rating, Name & Price */}
                 <div className="flex flex-col sm:flex-row items-center lg:h-full gap-2 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
@@ -190,7 +190,7 @@ export function Hero() {
                     <div className="hidden lg:block w-[1px] h-[48px] bg-[#929292] opacity-60 mx-[2px]"></div>
 
                     {/* Price Block */}
-                    <div className="flex sm:flex-col items-center sm:items-start justify-center gap-2 sm:gap-0">
+                    <div className="flex sm:flex-col h- items-center sm:items-start justify-center gap-2 sm:gap-0">
                         <div className="flex flex-col sm:flex-row items-baseline sm:items-center gap-1 sm:gap-2 sm:mb-0.5">
                             <span className="text-[#828282] line-through text-[11px] font-medium hidden sm:inline-block">2.299,00 €</span>
                             <span className="bg-[#376F7B] text-white text-[9px] font-bold px-2 py-[2px] rounded-full tracking-wide">SPARE HEUTE 400 €</span>
