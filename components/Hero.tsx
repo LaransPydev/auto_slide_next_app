@@ -117,7 +117,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className=" p-4 h-[10%]">
+            <div className=" pt-3 h-[8%]">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
@@ -150,7 +150,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 3. PRODUCT AREA (takes all remaining space) ━━━ */}
-            <div className=" w-full relative flex items-center justify-center h-[72%]">
+            <div className=" w-full relative flex items-center justify-center h-[74%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
