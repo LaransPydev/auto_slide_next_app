@@ -69,7 +69,7 @@ export function Hero() {
         >
             
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className="p-6 h-[10%]">
+            <div className="p-4 ">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
@@ -132,7 +132,7 @@ export function Hero() {
                                 {model.id === "pro" && (
                                     <VideoPlayer
                                         src="/videos/pro.webm"
-                                        className="scale-130 -translate-y-4"
+                                        className="scale-125 -translate-y-4"
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
                                     />
