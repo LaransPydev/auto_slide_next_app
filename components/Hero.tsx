@@ -68,7 +68,7 @@ export function Hero() {
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className="p-4 h-[8%]">
+            <div className="mt-4 h-[8%]">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
