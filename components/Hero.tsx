@@ -79,7 +79,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 2. MODEL SELECTOR TABS ━━━ */}
-            <div className="h-[6%]">
+            <div className="h-[7%]">
                 <div className="flex items-center justify-center gap-1 p-1 bg-[#EBECFB] backdrop-blur-md  rounded-full border border-white/10 mx-4 sm:mx-0 h-full ">
                     {MODELS.map((model) => (
                         <button
@@ -103,7 +103,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 3. PRODUCT AREA ━━━ */}
-            <div className="w-full relative flex items-center justify-center h-[76%]">
+            <div className="w-full relative flex items-center justify-center h-[75%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
