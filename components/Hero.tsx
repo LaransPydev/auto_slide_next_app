@@ -65,11 +65,11 @@ export function Hero() {
     return (
         <section
             className="overflow-hidden relative w-full h-full flex flex-col items-center"
-            style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 20%, #CBCFF7 100%)' }}
+            style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #F9F9FE 0%, #CBCFF7 100%)' }}
         >
             
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className="p-4 ">
+            <div className="p-4">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
@@ -79,8 +79,8 @@ export function Hero() {
             </div>
 
             {/* ━━━ 2. MODEL SELECTOR TABS ━━━ */}
-            <div className=" h-[6%]">
-                <div className="flex items-center justify-center gap-1 p-1 bg-[#EBECFB] backdrop-blur-md  rounded-full border border-white/20 mx-4 sm:mx-0 h-full">
+            <div className="h-[6%]">
+                <div className="flex items-center justify-center gap-1 p-1 bg-[#EBECFB] backdrop-blur-md  rounded-full border border-white/10 mx-4 sm:mx-0 h-full ">
                     {MODELS.map((model) => (
                         <button
                             key={model.id}
@@ -103,13 +103,13 @@ export function Hero() {
             </div>
 
             {/* ━━━ 3. PRODUCT AREA ━━━ */}
-            <div className="w-full relative flex items-center justify-center h-[70%]">
+            <div className="w-full relative flex items-center justify-center h-[76%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
                     <button
                         onClick={handlePrev}
-                        className="pointer-events-auto text-gray-700 hover:text-black hover:scale-110 transition-transform hidden sm:block"
+                        className="pointer-events-auto text-gray-700 hover:text-black hover:scale-110 transition-transform sm:block"
                     >
                         <ChevronLeft size={32} />
                     </button>
@@ -169,7 +169,7 @@ export function Hero() {
 
             {/* ━━━ 4. BOTTOM INFO BAR (SVG) ━━━ */}
             {/* Outer row: full width, centres the inner box, provides bottom padding */}
-            <div className="flex-shrink-0 flex items-center justify-center w-full pb-3 sm:pb-4 lg:pb-5 h-[12%] px-3 sm:px-6">
+            <div className="flex-shrink-0 flex items-center justify-center w-full pb-3 sm:pb-4 lg:pb-5 h-[12%] px-3  sm:px-6">
                 {/* Inner box: locked to the SVG's 1164:90 aspect ratio so it always
                     wraps the image exactly — no empty space, perfectly centred */}
                 <div
