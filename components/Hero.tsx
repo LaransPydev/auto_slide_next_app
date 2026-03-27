@@ -67,8 +67,9 @@ export function Hero() {
             className="overflow-hidden relative w-full h-full flex flex-col items-center"
             style={{ background: 'radial-gradient(66.64% 166.82% at 50% 0%, #e4e4f3ff 0%, #babffcff 100%)' }}
         >
+            <div className="h-[18%] p-4">
             {/* ━━━ 1. HEADER ━━━ */}
-            <div className="mt-4 h-[8%]">
+            <div className=" h-[50%]">
                 <h1
                     className="text-2xl sm:text-3xl md:text-4xl text-gray-900 text-center px-4 sm:px-0"
                     style={{ fontFamily: "var(--font-sohne), Söhne, sans-serif", fontWeight: 600 }}
@@ -78,7 +79,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 2. MODEL SELECTOR TABS ━━━ */}
-            <div className="h-[6%]">
+            <div className="h-[50%]">
                 <div className="flex items-center justify-center gap-1 bg-[#EBECFB]/30 backdrop-blur-md rounded-full border border-white/20 mx-4 sm:mx-0 h-full">
                     {MODELS.map((model) => (
                         <button
@@ -100,9 +101,9 @@ export function Hero() {
                     ))}
                 </div>
             </div>
-
+</div>
             {/* ━━━ 3. PRODUCT AREA ━━━ */}
-            <div className="w-full relative flex items-center justify-center h-[74%]">
+            <div className="w-full relative flex items-center justify-center h-[70%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
