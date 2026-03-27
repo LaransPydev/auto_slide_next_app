@@ -103,7 +103,7 @@ export function Hero() {
             </div>
 
             {/* ━━━ 3. PRODUCT AREA ━━━ */}
-            <div className="w-full relative flex items-center justify-center h-[75%]">
+            <div className="w-full relative flex items-center justify-center h-[74%]">
 
                 {/* Navigation Arrows */}
                 <div className="absolute inset-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 pointer-events-none z-10">
