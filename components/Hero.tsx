@@ -131,7 +131,7 @@ export function Hero() {
                             <div key={model.id} className="w-full h-full flex-shrink-0 flex items-center justify-center">
                                 {model.id === "pro" && (
                                     <VideoPlayer
-                                        src="/videos/pro.webm"
+                                        src="/videos/sTread_Pro_UIUX_Animation.webm"
                                         className="scale-125 -translate-y-4"
                                         isActive={activeModel === "pro"}
                                         onEnded={handleNext}
@@ -139,7 +139,7 @@ export function Hero() {
                                 )}
                                 {model.id === "row" && (
                                     <VideoPlayer
-                                        src="/videos/row.webm"
+                                        src="/videos/sRow_UIUX_Animation.webm"
                                         className="scale-140 -translate-y-20 md:-translate-y-32 xl:-translate-y-25"
                                         isActive={activeModel === "row"}
                                         onEnded={handleNext}
@@ -147,7 +147,7 @@ export function Hero() {
                                 )}
                                 {model.id === "bike" && (
                                     <VideoPlayer
-                                        src="/videos/bike.webm"
+                                        src="/videos/sBike_UIUX_Animation.webm"
                                         className="scale-150 -translate-y-4 md:scale-110 md:-translate-y-6"
                                         isActive={activeModel === "bike"}
                                         onEnded={handleNext}
